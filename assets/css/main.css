@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Cereal';
+  src: url(~/assets/fonts/Cereal_light.otf) format('otf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Cereal';
+  src: url(~/assets/fonts/Cereal_normal.otf) format('otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Cereal';
+  src: url(~/assets/fonts/Cereal_medium.otf) format('otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Cereal';
+  src: url(~/assets/fonts/Cereal_semibold.otf) format('otf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Cereal';
+  src: url(~/assets/fonts/Cereal_bold.otf) format('otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Cereal';
+  src: url(~/assets/fonts/Cereal_extra_bold.otf) format('otf');
+  font-weight: 800;
+}
+
+@layer base {
+  html {
+    font-family: 'Cereal', sans-serif;
+  }
+}

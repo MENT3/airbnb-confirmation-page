@@ -1,14 +1,35 @@
 <template>
-  <div>
-    <div class="container flex space-x-24">
-      <div class="w-7/12 bg-green-100">
-        <h1 class="text-3xl text-gray-700 font-semibold">
-          Demande de réservation
-        </h1>
+  <div class="container mt-16">
+    <h1 class="mb-12 text-3xl text-gray-900 font-medium">
+      Demande de réservation
+    </h1>
+
+    <div class="flex space-x-24">
+      <div class="w-7/12">
         <div>
-          <h2>
+          <h2 class="mb-5 text-xl font-semibold">
             Votre voyage
           </h2>
+        </div>
+
+        <div class="mb-4">
+          <h3 class="font-medium">
+            Dates
+          </h3>
+
+          <p class="text-gray-700 font-light">
+            May 19 – Jun 30
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-medium">
+            Personnes
+          </h3>
+
+          <p class="text-gray-700 font-light">
+            2 Adules
+          </p>
         </div>
 
         <hr class="mx-2 my-4">
