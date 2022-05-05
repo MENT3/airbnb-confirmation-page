@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -10,8 +12,11 @@ module.exports = {
     extend: {
       container: {
         center: true,
-        padding: '13rem'
+        padding: '10rem'
       },
+      fontFamily: {
+        'body': ['Cereal', ...defaultTheme.fontFamily.sans]
+      }
     },
   },
   plugins: [],
