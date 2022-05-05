@@ -53,21 +53,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 const Household = () => import('@/components/services/Household')
 
 export default {
   data() {
     return {
-      services: [{
-        id: 1,
-        title: 'Ménage'
-      }, {
-        id: 2,
-        title: 'Cuisine à domicile'
-      }],
       serviceModal: null
     }
   },
+
+  computed: mapState('services', ['services']),
 
   methods: {
     openServiceModal(service) {
