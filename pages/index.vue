@@ -14,12 +14,12 @@
         <hr class="mx-2 my-4">
 
         <div>
-          <h3 class="text-xl text-gray-800">
+          <h3 class="mb-4 text-xl text-gray-800">
             Services
           </h3>
 
           <div
-            v-for="service in services"
+            v-for="service in servicesWithDisponibilities"
             :key="service.id"
             class="mb-2 flex justify-between last:mb-0"
           >
@@ -29,9 +29,18 @@
 
             <button
               class="px-3 py-1 border border-gray-700 rounded-lg"
-              @click="openServiceModal('Household')"
+              @click="openServiceModal(service.type)"
+              v-if="service.available"
             >
               Ajouter
+            </button>
+
+            <button
+              class="px-3 py-1 border border-gray-700 rounded-lg"
+              @click="removeService(service.type)"
+              v-else
+            >
+              Supprimer
             </button>
           </div>
         </div>
@@ -40,7 +49,7 @@
       </div>
 
       <div class="w-5/12 bg-yellow-100 border rounded">
-        salut
+        prix
       </div>
     </div>
 
@@ -53,9 +62,10 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
-const Household = () => import('@/components/services/Household')
+const household = () => import('@/components/services/Household')
+const cooking = () => import('@/components/services/Cooking')
 
 export default {
   data() {
@@ -64,11 +74,15 @@ export default {
     }
   },
 
-  computed: mapState('services', ['services']),
+  computed: mapGetters('services', ['servicesWithDisponibilities']),
 
   methods: {
     openServiceModal(service) {
       this.serviceModal = eval(service)
+    },
+
+    removeService(serviceType) {
+      this.$store.commit('user/REMOVE_SELECTED_SERVICE_FROM_TYPE', serviceType)
     }
   }
 }

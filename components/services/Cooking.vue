@@ -15,7 +15,7 @@
       <div>
         <ul class="mt-3">
           <li
-            v-for="professional of householdProfessionals"
+            v-for="professional of cookingProfessionals"
             :key="professional.id"
             @click="selectedProfessional = professional.id"
             :class="{ 'bg-green-200': selectedProfessional === professional.id }"
@@ -46,12 +46,12 @@ export default {
     }
   },
 
-  computed: mapGetters('services', ['householdProfessionals']),
+  computed: mapGetters('services', ['cookingProfessionals']),
 
   methods: {
     submit() {
       this.$store.commit('user/ADD_SELECTED_SERVICE', {
-        type: 'household',
+        type: 'cooking',
         date: this.selectedDate,
         professionalId: this.selectedProfessional
       })
