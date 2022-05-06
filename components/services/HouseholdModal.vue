@@ -5,12 +5,7 @@
     </h1>
 
     <div class="flex">
-      <no-ssr>
-        <v-date-picker
-          trim-weeks
-          v-model="selectedDate"
-        />
-      </no-ssr>
+      <DatePicker v-model="selectedDate" />
 
       <div>
         <ul class="mt-3">
