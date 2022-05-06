@@ -4,26 +4,17 @@
       Cuisine à domicile
     </h1>
 
-    <div class="flex">
+    <div class="flex space-x-8">
       <DatePicker v-model="selectedDate" />
 
-      <div>
-        <ul class="mt-3">
-          <li
-            v-for="professional of cookingProfessionals"
-            :key="professional.id"
-            @click="selectedProfessional = professional.id"
-            :class="{ 'bg-green-200': selectedProfessional === professional.id }"
-            class="px-3 py-1 mb-1 rounded-lg cursor-pointer last:mb-0"
-          >
-            {{ professional.name }}
-          </li>
-        </ul>
-      </div>
+      <ProfessionalsList
+        v-model="selectedProfessional"
+        :professionals="cookingProfessionals"
+      />
     </div>
 
     <button
-      class="mt-2 py-2 px-3 bg-red-400 text-white font-semibold rounded-lg float-right transition duration-100 ease-in-out hover:bg-red-500"
+      class="mt-2 py-2 px-3 bg-neutral-900 text-white font-semibold rounded-lg float-right transition duration-100 ease-in-out hover:bg-neutral-800"
       @click="submit"
     >
       Valider

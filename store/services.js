@@ -12,6 +12,9 @@ export const getters = {
   cookingProfessionals(state, getters) {
     return getters.serviceProfessionals('cooking')
   },
+  haircutterProfessionals(state, getters) {
+    return getters.serviceProfessionals('haircutter')
+  },
   servicesWithDisponibilities(state, getters, rootState) {
     const selectedServicesType = rootState.user.selectedServices.map(s => s.type)
 

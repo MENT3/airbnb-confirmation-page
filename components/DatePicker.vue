@@ -4,6 +4,7 @@
       trim-weeks
       :value="value"
       :style="'border: 0'"
+      color="gray"
       @input="$emit('input', $event)"
     />
   </no-ssr>

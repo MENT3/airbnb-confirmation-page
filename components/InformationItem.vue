@@ -5,7 +5,7 @@
         {{ title }}
       </h3>
 
-      <p class="text-gray-700 font-light">
+      <p class="text-neutral-700 font-light">
         {{ description }}
       </p>
     </div>

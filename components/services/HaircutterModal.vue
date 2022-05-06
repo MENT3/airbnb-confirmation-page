@@ -9,7 +9,7 @@
 
       <ProfessionalsList
         v-model="selectedProfessional"
-        :professionals="householdProfessionals"
+        :professionals="haircutterProfessionals"
       />
     </div>
 
@@ -32,7 +32,7 @@ export default {
     }
   },
 
-  computed: mapGetters('services', ['householdProfessionals']),
+  computed: mapGetters('services', ['haircutterProfessionals']),
 
   methods: {
     submit() {

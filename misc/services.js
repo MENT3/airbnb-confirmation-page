@@ -26,4 +26,18 @@ export const services = [{
     id: 3,
     name: 'Florian'
   }]
+}, {
+  id: 3,
+  title: 'Coiffeur à domicile',
+  type: 'haircutter',
+  professionals: [{
+    id: 1,
+    name: 'Severine'
+  }, {
+    id: 2,
+    name: 'Justine'
+  }, {
+    id: 3,
+    name: 'Quentin'
+  }]
 }]

@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-16">
-    <h1 class="mb-12 text-3xl text-gray-900 font-medium">
+    <h1 class="mb-12 text-3xl text-neutral-900 font-medium">
       Demande de réservation
     </h1>
 
@@ -25,7 +25,7 @@
         <hr class="my-8">
 
         <div>
-          <h3 class="mb-4 text-xl text-gray-800">
+          <h3 class="mb-4 text-xl text-neutral-800">
             Services
           </h3>
 
@@ -39,7 +39,7 @@
             </p>
 
             <button
-              class="px-3 py-1 border border-gray-700 rounded-lg"
+              class="px-3 py-1 border border-neutral-700 rounded-lg"
               @click="openServiceModal(service.type)"
               v-if="service.available"
             >
@@ -47,7 +47,7 @@
             </button>
 
             <button
-              class="px-3 py-1 border border-gray-700 rounded-lg"
+              class="px-3 py-1 border border-neutral-700 rounded-lg"
               @click="removeService(service.type)"
               v-else
             >
@@ -77,6 +77,7 @@ import { mapGetters } from 'vuex'
 
 const householdModal = () => import('@/components/services/HouseholdModal')
 const cookingModal = () => import('@/components/services/CookingModal')
+const haircutterModal = () => import('@/components/services/HaircutterModal')
 
 export default {
   data() {

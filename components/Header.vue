@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 border-b border-gray-200">
+  <div class="p-6 border-b border-neutral-200">
     <img
       src="@/assets/images/logo/airbnb.png"
       alt="logo"
