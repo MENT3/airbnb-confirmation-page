@@ -25,21 +25,30 @@
         <hr class="my-8">
 
         <div>
-          <h3 class="mb-4 text-xl text-neutral-800">
+          <h2 class="mb-5 text-xl font-semibold">
             Services
-          </h3>
+          </h2>
 
           <div
             v-for="service in servicesWithDisponibilities"
             :key="service.id"
-            class="mb-2 flex justify-between last:mb-0"
+            class="mb-4 flex justify-between item-center last:mb-0"
           >
-            <p>
-              {{ service.title }}
-            </p>
+            <div>
+              <p>
+                {{ service.title }}
+              </p>
+
+              <div
+                v-if="!service.available"
+                class="text-neutral-700 font-light"
+              >
+                {{ formatedServiceDescription(service.type) }}
+              </div>
+            </div>
 
             <button
-              class="px-3 py-1 border border-neutral-700 rounded-lg"
+              class="h-min px-3 py-1 border border-neutral-700 rounded-lg"
               @click="openServiceModal(service.type)"
               v-if="service.available"
             >
@@ -47,7 +56,7 @@
             </button>
 
             <button
-              class="px-3 py-1 border border-neutral-700 rounded-lg"
+              class="h-min px-3 py-1 border border-neutral-700 rounded-lg"
               @click="removeService(service.type)"
               v-else
             >
@@ -75,9 +84,9 @@
 <script>
 import { mapGetters } from 'vuex'
 
-const householdModal = () => import('@/components/services/HouseholdModal')
-const cookingModal = () => import('@/components/services/CookingModal')
-const haircutterModal = () => import('@/components/services/HaircutterModal')
+const householdModal = () => import('@/components/HouseholdModal')
+const cookingModal = () => import('@/components/CookingModal')
+const haircutterModal = () => import('@/components/HaircutterModal')
 
 export default {
   data() {
@@ -86,7 +95,17 @@ export default {
     }
   },
 
-  computed: mapGetters('services', ['servicesWithDisponibilities']),
+  computed: {
+    ...mapGetters('services', ['servicesWithDisponibilities']),
+
+    formatedServiceDescription() {
+      return (serviceType) => {
+        const serviceInfos = this.getServiceInfos(serviceType)
+
+        return `${serviceInfos.professional?.name} ${serviceInfos.professional?.price}€`
+      }
+    }
+  },
 
   methods: {
     openServiceModal(service) {
@@ -95,6 +114,22 @@ export default {
 
     removeService(serviceType) {
       this.$store.commit('user/REMOVE_SELECTED_SERVICE_FROM_TYPE', serviceType)
+    },
+
+    getServiceInfos(serviceType) {
+      // Refactor to use store methods
+      const service = this.$store.state.user.selectedServices.find(s => s.type === serviceType)
+      const professional = this.$store.state.services.services.find(s => s.type === serviceType)?.professionals.find(p => p.id === service.professionalId)
+
+      console.log({
+        ...service,
+        professional
+      })
+
+      return {
+        ...service,
+        professional
+      }
     }
   }
 }
