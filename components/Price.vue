@@ -35,12 +35,11 @@ export default {
       // Refactor to use store methods
       const selectedServices = this.$store.state.user.selectedServices
       const dynamicPrices = selectedServices.map(service => {
-        const professional = this.$store.state.services.services
-        .find(s => s.type === service.type)?.professionals
-        .find(p => p.id === service.professionalId)
+        const serviceInfos = this.$store.state.services.services.find(s => s.type === service.type)
+        const professional = serviceInfos?.professionals.find(p => p.id === service.professionalId)
 
         return {
-          label: service.type,
+          label: serviceInfos.title,
           value: professional.price,
         }
       })
