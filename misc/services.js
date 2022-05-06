@@ -4,13 +4,19 @@ export const services = [{
   type: 'household',
   professionals: [{
     id: 1,
-    name: 'Didier'
+    name: 'Didier',
+    price: 15.99,
+    duration: 60
   }, {
     id: 2,
-    name: 'Valentin'
+    name: 'Valentin',
+    price: 15.99,
+    duration: 60
   }, {
     id: 3,
-    name: 'Ryan'
+    name: 'Ryan',
+    price: 15.99,
+    duration: 60
   }]
 }, {
   id: 2,
@@ -18,13 +24,24 @@ export const services = [{
   type: 'cooking',
   professionals: [{
     id: 1,
-    name: 'Tristan'
+    name: 'Tristan',
+    price: 15.99,
+    duration: 60
   }, {
     id: 2,
-    name: 'Emma'
+    name: 'Emma',
+    price: 15.99,
+    duration: 60
   }, {
     id: 3,
-    name: 'Florian'
+    name: 'Florian',
+    price: 15.99,
+    duration: 60
+  }, {
+    id: 4,
+    name: 'Philipe',
+    price: 15.99,
+    duration: 60
   }]
 }, {
   id: 3,
@@ -32,12 +49,18 @@ export const services = [{
   type: 'haircutter',
   professionals: [{
     id: 1,
-    name: 'Severine'
+    name: 'Severine',
+    price: 15.99,
+    duration: 60
   }, {
     id: 2,
-    name: 'Justine'
+    name: 'Justine',
+    price: 15.99,
+    duration: 60
   }, {
     id: 3,
-    name: 'Quentin'
+    name: 'Quentin',
+    price: 15.99,
+    duration: 60
   }]
 }]

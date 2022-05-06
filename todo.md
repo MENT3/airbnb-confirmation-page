@@ -1,3 +1,4 @@
-- [ ] Layout
+- [x] Layout
 - [ ] Style
 - [ ] Prices
+- [ ] Modal transition

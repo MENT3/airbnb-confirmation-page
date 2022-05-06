@@ -1,8 +1,10 @@
 <template>
   <Modal @close="$emit('close')">
-    <h1>
-      Cuisine à domicile
-    </h1>
+    <h2 class="mt-4 pl-3 text-xl font-semibold">
+      Coiffeur à domicile
+    </h2>
+
+    <hr class="mt-4 mb-4 mx-3">
 
     <div class="flex space-x-8">
       <DatePicker v-model="selectedDate" />
@@ -14,7 +16,7 @@
     </div>
 
     <button
-      class="mt-2 py-2 px-3 bg-neutral-900 text-white font-semibold rounded-lg float-right transition duration-100 ease-in-out hover:bg-neutral-800"
+      class="mt-8 py-2 px-3 bg-neutral-900 text-white font-semibold rounded-lg float-right transition duration-100 ease-in-out hover:bg-neutral-800"
       @click="submit"
     >
       Valider

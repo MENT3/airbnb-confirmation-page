@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="max-h-[400px] overflow-y-auto">
     <ProfessionalItem
       v-for="professional in professionals"
       :key="professional.id"
