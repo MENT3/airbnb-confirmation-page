@@ -12,27 +12,17 @@
           </h2>
         </div>
 
-        <div class="mb-4">
-          <h3 class="font-medium">
-            Dates
-          </h3>
+        <InformationItem
+          title="Dates"
+          description="19 Mai - 30 Join"
+        />
 
-          <p class="text-gray-700 font-light">
-            May 19 – Jun 30
-          </p>
-        </div>
+        <InformationItem
+          title="Personnes"
+          description="2 Adultes"
+        />
 
-        <div>
-          <h3 class="font-medium">
-            Personnes
-          </h3>
-
-          <p class="text-gray-700 font-light">
-            2 Adules
-          </p>
-        </div>
-
-        <hr class="mx-2 my-4">
+        <hr class="my-8">
 
         <div>
           <h3 class="mb-4 text-xl text-gray-800">
