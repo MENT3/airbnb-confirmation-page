@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       container: {
         center: true,
-        padding: '10rem'
+        padding: '13rem'
       },
       fontFamily: {
         'body': ['Cereal', ...defaultTheme.fontFamily.sans]
