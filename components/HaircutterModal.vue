@@ -39,7 +39,7 @@ export default {
   methods: {
     submit() {
       this.$store.commit('user/ADD_SELECTED_SERVICE', {
-        type: 'household',
+        type: 'haircutter',
         date: this.selectedDate,
         professionalId: this.selectedProfessional
       })
