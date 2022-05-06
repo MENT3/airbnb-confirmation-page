@@ -119,7 +119,9 @@ export default {
     getServiceInfos(serviceType) {
       // Refactor to use store methods
       const service = this.$store.state.user.selectedServices.find(s => s.type === serviceType)
-      const professional = this.$store.state.services.services.find(s => s.type === serviceType)?.professionals.find(p => p.id === service.professionalId)
+      const professional = this.$store.state.services.services
+        .find(s => s.type === serviceType)?.professionals
+        .find(p => p.id === service.professionalId)
 
       return {
         ...service,

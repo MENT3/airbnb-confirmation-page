@@ -1,6 +1,6 @@
 <template>
   <li class="w-full mb-3 flex justify-between font-light last:mb-0">
-    <span class="underline">
+    <span class="capitalize underline">
       {{ label }}
     </span>
 
