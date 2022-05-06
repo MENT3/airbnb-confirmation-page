@@ -16,7 +16,8 @@
     </div>
 
     <button
-      class="mt-8 py-2 px-3 bg-neutral-900 text-white font-semibold rounded-lg float-right transition duration-100 ease-in-out hover:bg-neutral-800"
+      class="mt-8 py-2 px-3 bg-neutral-900 text-white font-semibold rounded-lg float-right transition duration-100 ease-in-out hover:bg-neutral-800 disabled:bg-neutral-600 disabled:cursor-not-allowed"
+      :disabled="!selectedProfessional"
       @click="submit"
     >
       Valider
@@ -38,13 +39,15 @@ export default {
 
   methods: {
     submit() {
-      this.$store.commit('user/ADD_SELECTED_SERVICE', {
-        type: 'haircutter',
-        date: this.selectedDate,
-        professionalId: this.selectedProfessional
-      })
+      if (this.selectedProfessional) {
+        this.$store.commit('user/ADD_SELECTED_SERVICE', {
+          type: 'haircutter',
+          date: this.selectedDate,
+          professionalId: this.selectedProfessional
+        })
 
-      this.$emit('close')
+        this.$emit('close')
+      }
     }
   }
 }
