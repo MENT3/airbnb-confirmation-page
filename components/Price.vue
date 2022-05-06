@@ -6,7 +6,7 @@
 
     <PriceList :prices="prices"/>
 
-    <hr class="my-8">
+    <hr class="my-6">
 
     <div class="flex justify-between">
       <span class="font-semibold">
@@ -32,8 +32,25 @@ const prices = [{
 export default {
   computed: {
     prices() {
-      return prices
+      // Refactor to use store methods
+      const selectedServices = this.$store.state.user.selectedServices
+      const dynamicPrices = selectedServices.map(service => {
+        const professional = this.$store.state.services.services
+        .find(s => s.type === service.type)?.professionals
+        .find(p => p.id === service.professionalId)
+
+        return {
+          label: service.type,
+          value: professional.price,
+        }
+      })
+
+      return [
+        ...prices,
+        ...dynamicPrices
+      ]
     },
+
     total() {
       return this.prices.reduce((acc, price) => acc + price.value, 0)
     }
