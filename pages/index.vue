@@ -65,12 +65,12 @@
           </div>
         </div>
 
-        <br v-for="i in 100" :key="i">
+        <hr class="my-8">
+
+        <img src="@/assets/images/fake_form.png" alt="form">
       </div>
 
-      <div class="w-5/12 bg-yellow-100 border rounded">
-        prix
-      </div>
+      <Price />
     </div>
 
     <component
@@ -120,11 +120,6 @@ export default {
       // Refactor to use store methods
       const service = this.$store.state.user.selectedServices.find(s => s.type === serviceType)
       const professional = this.$store.state.services.services.find(s => s.type === serviceType)?.professionals.find(p => p.id === service.professionalId)
-
-      console.log({
-        ...service,
-        professional
-      })
 
       return {
         ...service,
