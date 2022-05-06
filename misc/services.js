@@ -15,5 +15,15 @@ export const services = [{
 }, {
   id: 2,
   title: 'Cuisine à domicile',
-  type: 'cooking'
+  type: 'cooking',
+  professionals: [{
+    id: 1,
+    name: 'Tristan'
+  }, {
+    id: 2,
+    name: 'Emma'
+  }, {
+    id: 3,
+    name: 'Florian'
+  }]
 }]

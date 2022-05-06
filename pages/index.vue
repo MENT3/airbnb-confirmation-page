@@ -75,8 +75,8 @@
 <script>
 import { mapGetters } from 'vuex'
 
-const household = () => import('@/components/services/Household')
-const cooking = () => import('@/components/services/Cooking')
+const householdModal = () => import('@/components/services/HouseholdModal')
+const cookingModal = () => import('@/components/services/CookingModal')
 
 export default {
   data() {
@@ -89,7 +89,7 @@ export default {
 
   methods: {
     openServiceModal(service) {
-      this.serviceModal = eval(service)
+      this.serviceModal = eval(`${service}Modal`)
     },
 
     removeService(serviceType) {
