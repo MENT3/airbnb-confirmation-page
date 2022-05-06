@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute inset-0 flex items-center justify-center bg-[#00000080] z-50"
+    class="fixed inset-0 flex items-center justify-center bg-[#00000080] z-50"
     @click.self.prevent="$emit('close')"
   >
     <div class="min-w-max p-4 bg-white rounded-lg">
@@ -18,9 +18,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>

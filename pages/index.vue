@@ -48,7 +48,7 @@
             </div>
 
             <button
-              class="h-min px-3 py-1 border border-neutral-700 rounded-lg"
+              class="h-min px-3 py-1 border border-neutral-700 rounded-lg transition duration-100 ease-in-out hover:text-white hover:bg-neutral-900"
               @click="openServiceModal(service.type)"
               v-if="service.available"
             >
@@ -56,7 +56,7 @@
             </button>
 
             <button
-              class="h-min px-3 py-1 border border-neutral-700 rounded-lg"
+              class="h-min px-3 py-1 border border-neutral-700 rounded-lg transition duration-100 ease-in-out hover:text-white hover:bg-neutral-900"
               @click="removeService(service.type)"
               v-else
             >
@@ -127,6 +127,13 @@ export default {
         ...service,
         professional
       }
+    }
+  },
+
+  watch: {
+    serviceModal() {
+      const bodyEl = document.querySelector('body')
+      bodyEl.classList.toggle('overflow-hidden')
     }
   }
 }
