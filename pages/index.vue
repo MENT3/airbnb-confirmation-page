@@ -101,8 +101,13 @@ export default {
     formatedServiceDescription() {
       return (serviceType) => {
         const serviceInfos = this.getServiceInfos(serviceType)
+        const formatedDate = new Date(serviceInfos.date).toLocaleDateString('fr-FR', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        })
 
-        return `${serviceInfos.professional?.name} ${serviceInfos.professional?.price}€`
+        return `${serviceInfos.professional?.name} le ${formatedDate}`
       }
     }
   },
