@@ -5,17 +5,17 @@ export const services = [{
   professionals: [{
     id: 1,
     name: 'Didier',
-    price: 15.99,
+    price: 19.99,
     duration: 60
   }, {
     id: 2,
     name: 'Valentin',
-    price: 15.99,
-    duration: 60
+    price: 29.99,
+    duration: 120
   }, {
     id: 3,
     name: 'Ryan',
-    price: 15.99,
+    price: 19.99,
     duration: 60
   }]
 }, {
@@ -25,23 +25,23 @@ export const services = [{
   professionals: [{
     id: 1,
     name: 'Tristan',
-    price: 15.99,
-    duration: 60
+    price: 89.95,
+    duration: 180
   }, {
     id: 2,
     name: 'Emma',
-    price: 15.99,
-    duration: 60
+    price: 159.99,
+    duration: 210
   }, {
     id: 3,
     name: 'Florian',
-    price: 15.99,
-    duration: 60
+    price: 250,
+    duration: 120
   }, {
     id: 4,
     name: 'Philipe',
-    price: 15.99,
-    duration: 60
+    price: 134.90,
+    duration: 130
   }]
 }, {
   id: 3,

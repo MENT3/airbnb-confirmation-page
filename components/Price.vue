@@ -51,7 +51,7 @@ export default {
     },
 
     total() {
-      return this.prices.reduce((acc, price) => acc + price.value, 0)
+      return (this.prices.reduce((acc, price) => acc + price.value, 0)).toFixed(2)
     }
   }
 }
